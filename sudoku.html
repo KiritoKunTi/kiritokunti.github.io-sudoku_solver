@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku solver</title>
+    <link rel="stylesheet" href="sudoku.css">
+</head>
+<body>
+    <div class="wrapper">
+
+        <header class="header">
+            <div class="wrapper-buttons">
+                <button onclick="setBoard(easy)">Easy</button>
+                <button onclick="setBoard(medium)">Medium</button>
+                <button onclick="setBoard(hard)">Hard</button>
+            </div>
+        </header>
+
+        <div class="sudoku">
+            <div class="sudoku-board">
+                <!-- first three -->
+                <div class="inner-grid">
+
+                    <input id="1" maxlength="1" type="text">
+                    <input id="2" maxlength="1" type="text">
+                    <input id="3" maxlength="1" type="text">
+
+                    <input id="10" maxlength="1" type="text">
+                    <input id="11" maxlength="1" type="text">
+                    <input id="12" maxlength="1" type="text">
+
+                    <input id="19" maxlength="1" type="text">
+                    <input id="20" maxlength="1" type="text">
+                    <input id="21" maxlength="1" type="text">
+                </div>
+                
+                <div class="inner-grid">
+
+                    <input id="4" maxlength="1" type="text">
+                    <input id="5" maxlength="1" type="text">
+                    <input id="6" maxlength="1" type="text">
+
+                    <input id="13" maxlength="1" type="text">
+                    <input id="14" maxlength="1" type="text">
+                    <input id="15" maxlength="1" type="text">
+
+                    <input id="22" maxlength="1" type="text">
+                    <input id="23" maxlength="1" type="text">
+                    <input id="24" maxlength="1" type="text">
+                </div>
+                
+                <div class="inner-grid">
+
+                    <input id="7" maxlength="1" type="text">
+                    <input id="8" maxlength="1" type="text">
+                    <input id="9" maxlength="1" type="text">
+
+                    <input id="16" maxlength="1" type="text">
+                    <input id="17" maxlength="1" type="text">
+                    <input id="18" maxlength="1" type="text">
+
+                    <input id="25" maxlength="1" type="text">
+                    <input id="26" maxlength="1" type="text">
+                    <input id="27" maxlength="1" type="text">
+                </div>
+                <!-- mid three -->
+                <div class="inner-grid">
+
+                    <input id="28" maxlength="1" type="text">
+                    <input id="29" maxlength="1" type="text">
+                    <input id="30" maxlength="1" type="text">
+
+                    <input id="37" maxlength="1" type="text">
+                    <input id="38" maxlength="1" type="text">
+                    <input id="39" maxlength="1" type="text">
+
+                    <input id="46" maxlength="1" type="text">
+                    <input id="47" maxlength="1" type="text">
+                    <input id="48" maxlength="1" type="text">
+                </div>
+
+                <div class="inner-grid">
+
+                    <input id="31" maxlength="1" type="text">
+                    <input id="32" maxlength="1" type="text">
+                    <input id="33" maxlength="1" type="text">
+
+                    <input id="40" maxlength="1" type="text">
+                    <input id="41" maxlength="1" type="text">
+                    <input id="42" maxlength="1" type="text">
+
+                    <input id="49" maxlength="1" type="text">
+                    <input id="50" maxlength="1" type="text">
+                    <input id="51" maxlength="1" type="text">
+                </div>
+    
+                <div class="inner-grid">
+
+                    <input id="34" maxlength="1" type="text">
+                    <input id="35" maxlength="1" type="text">
+                    <input id="36" maxlength="1" type="text">
+
+                    <input id="43" maxlength="1" type="text">
+                    <input id="44" maxlength="1" type="text">
+                    <input id="45" maxlength="1" type="text">
+
+                    <input id="52" maxlength="1" type="text">
+                    <input id="53" maxlength="1" type="text">
+                    <input id="54" maxlength="1" type="text">
+                </div>
+                
+                <!-- last three -->
+                <div class="inner-grid">
+
+                    <input id="55" maxlength="1" type="text">
+                    <input id="56" maxlength="1" type="text">
+                    <input id="57" maxlength="1" type="text">
+
+                    <input id="64" maxlength="1" type="text">
+                    <input id="65" maxlength="1" type="text">
+                    <input id="66" maxlength="1" type="text">
+
+                    <input id="73" maxlength="1" type="text">
+                    <input id="74" maxlength="1" type="text">
+                    <input id="75" maxlength="1" type="text">
+                </div>
+                
+                <div class="inner-grid">
+
+                    <input id="58" maxlength="1" type="text">
+                    <input id="59" maxlength="1" type="text">
+                    <input id="60" maxlength="1" type="text">
+
+                    <input id="67" maxlength="1" type="text">
+                    <input id="68" maxlength="1" type="text">
+                    <input id="69" maxlength="1" type="text">
+
+                    <input id="76" maxlength="1" type="text">
+                    <input id="77" maxlength="1" type="text">
+                    <input id="78" maxlength="1" type="text">
+                </div>
+
+                <div class="inner-grid">
+
+                    <input id="61" maxlength="1" type="text">
+                    <input id="62" maxlength="1" type="text">
+                    <input id="63" maxlength="1" type="text">
+
+                    <input id="70" maxlength="1" type="text">
+                    <input id="71" maxlength="1" type="text">
+                    <input id="72" maxlength="1" type="text">
+
+                    <input id="79" maxlength="1" type="text">
+                    <input id="80" maxlength="1" type="text">
+                    <input id="81" maxlength="1" type="text">
+                </div>
+            </div>
+
+
+            <div class="sudoku-board">
+                <!-- first three -->
+                <div class="inner-grid">
+
+                    <input id="a1" maxlength="1" type="text">
+                    <input id="a2" maxlength="1" type="text">
+                    <input id="a3" maxlength="1" type="text">
+                    
+                    <input id="a10" maxlength="1" type="text">
+                    <input id="a11" maxlength="1" type="text">
+                    <input id="a12" maxlength="1" type="text">
+
+                    <input id="a19" maxlength="1" type="text">
+                    <input id="a20" maxlength="1" type="text">
+                    <input id="a21" maxlength="1" type="text">
+                </div>
+                
+                <div class="inner-grid">
+
+                    <input id="a4" maxlength="1" type="text">
+                    <input id="a5" maxlength="1" type="text">
+                    <input id="a6" maxlength="1" type="text">
+
+                    <input id="a13" maxlength="1" type="text">
+                    <input id="a14" maxlength="1" type="text">
+                    <input id="a15" maxlength="1" type="text">
+
+                    <input id="a22" maxlength="1" type="text">
+                    <input id="a23" maxlength="1" type="text">
+                    <input id="a24" maxlength="1" type="text">
+                </div>
+                
+                <div class="inner-grid">
+
+                    <input id="a7" maxlength="1" type="text">
+                    <input id="a8" maxlength="1" type="text">
+                    <input id="a9" maxlength="1" type="text">
+
+                    <input id="a16" maxlength="1" type="text">
+                    <input id="a17" maxlength="1" type="text">
+                    <input id="a18" maxlength="1" type="text">
+
+                    <input id="a25" maxlength="1" type="text">
+                    <input id="a26" maxlength="1" type="text">
+                    <input id="a27" maxlength="1" type="text">
+                </div>
+                <!-- mid three -->
+                <div class="inner-grid">
+
+                    <input id="a28" maxlength="1" type="text">
+                    <input id="a29" maxlength="1" type="text">
+                    <input id="a30" maxlength="1" type="text">
+
+                    <input id="a37" maxlength="1" type="text">
+                    <input id="a38" maxlength="1" type="text">
+                    <input id="a39" maxlength="1" type="text">
+
+                    <input id="a46" maxlength="1" type="text">
+                    <input id="a47" maxlength="1" type="text">
+                    <input id="a48" maxlength="1" type="text">
+                </div>
+
+                <div class="inner-grid">
+
+                    <input id="a31" maxlength="1" type="text">
+                    <input id="a32" maxlength="1" type="text">
+                    <input id="a33" maxlength="1" type="text">
+
+                    <input id="a40" maxlength="1" type="text">
+                    <input id="a41" maxlength="1" type="text">
+                    <input id="a42" maxlength="1" type="text">
+
+                    <input id="a49" maxlength="1" type="text">
+                    <input id="a50" maxlength="1" type="text">
+                    <input id="a51" maxlength="1" type="text">
+                </div>
+    
+                <div class="inner-grid">
+
+                    <input id="a34" maxlength="1" type="text">
+                    <input id="a35" maxlength="1" type="text">
+                    <input id="a36" maxlength="1" type="text">
+
+                    <input id="a43" maxlength="1" type="text">
+                    <input id="a44" maxlength="1" type="text">
+                    <input id="a45" maxlength="1" type="text">
+
+                    <input id="a52" maxlength="1" type="text">
+                    <input id="a53" maxlength="1" type="text">
+                    <input id="a54" maxlength="1" type="text">
+                </div>
+                
+                <!-- last three -->
+                <div class="inner-grid">
+
+                    <input id="a55" maxlength="1" type="text">
+                    <input id="a56" maxlength="1" type="text">
+                    <input id="a57" maxlength="1" type="text">
+
+                    <input id="a64" maxlength="1" type="text">
+                    <input id="a65" maxlength="1" type="text">
+                    <input id="a66" maxlength="1" type="text">
+
+                    <input id="a73" maxlength="1" type="text">
+                    <input id="a74" maxlength="1" type="text">
+                    <input id="a75" maxlength="1" type="text">
+                </div>
+                
+                <div class="inner-grid">
+
+                    <input id="a58" maxlength="1" type="text">
+                    <input id="a59" maxlength="1" type="text">
+                    <input id="a60" maxlength="1" type="text">
+
+                    <input id="a67" maxlength="1" type="text">
+                    <input id="a68" maxlength="1" type="text">
+                    <input id="a69" maxlength="1" type="text">
+
+                    <input id="a76" maxlength="1" type="text">
+                    <input id="a77" maxlength="1" type="text">
+                    <input id="a78" maxlength="1" type="text">
+                </div>
+
+                <div class="inner-grid">
+
+                    <input id="a61" maxlength="1" type="text">
+                    <input id="a62" maxlength="1" type="text">
+                    <input id="a63" maxlength="1" type="text">
+
+                    <input id="a70" maxlength="1" type="text">
+                    <input id="a71" maxlength="1" type="text">
+                    <input id="a72" maxlength="1" type="text">
+
+                    <input id="a79" maxlength="1" type="text">
+                    <input id="a80" maxlength="1" type="text">
+                    <input id="a81" maxlength="1" type="text">
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <button class="solve" onclick="initiate()">Solve</button>
+            <button class="clear" onclick="clearBoard()">Clear</button>
+            <p class="answer">Here is the extra information</p>
+        </footer>
+
+    </div>
+    <script src="sudoku.js"></script>
+</body>
+</html>
